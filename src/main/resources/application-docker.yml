@@ -1,11 +1,13 @@
 spring:
   kafka:
-    consumer:
-      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
     producer:
-      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      bootstrap-servers: kafka:29092
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+    consumer:
+      bootstrap-servers: kafka:29092
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
   datasource:
-    url: jdbc:mysql://localhost:3306/mydatabase?useSSL=false
+    url: jdbc:mysql://mysql:3306/mydatabase?useSSL=false
     username: user
     password: password
   jpa:
