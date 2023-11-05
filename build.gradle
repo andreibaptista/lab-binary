@@ -3,6 +3,7 @@ plugins {
     id 'org.springframework.boot' version '3.1.5'
     id 'io.spring.dependency-management' version '1.1.3'
     id 'com.google.protobuf' version '0.8.17'
+    id 'com.github.davidmc24.gradle.plugin.avro' version '1.2.0'
 }
 
 group = 'com.andrei'
@@ -29,9 +30,11 @@ dependencies {
     implementation 'org.springframework.kafka:spring-kafka'
     implementation 'mysql:mysql-connector-java:8.0.28'
     implementation 'com.google.protobuf:protobuf-java:3.19.6'
+    implementation 'org.apache.avro:avro:1.10.2' // Adjust version as needed
+
 
     compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+//    developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'

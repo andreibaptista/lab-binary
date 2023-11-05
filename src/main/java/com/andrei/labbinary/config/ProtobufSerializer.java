@@ -1,4 +1,3 @@
-// ProtobufSerializer.java
 package com.andrei.labbinary.config;
 
 import com.andrei.labbinary.proto.PersonProto;

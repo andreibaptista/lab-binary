@@ -1,14 +1,19 @@
 spring:
+#  kafka:
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: com.andrei.labbinary.config.ProtobufSerializer
+#    consumer:
+#      bootstrap-servers: localhost:9092
+#      group-id: my-group
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: com.andrei.labbinary.config.ProtobufDeserializer
   kafka:
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: com.andrei.labbinary.config.ProtobufSerializer
     consumer:
-      bootstrap-servers: localhost:9092
-      group-id: my-group
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: com.andrei.labbinary.config.ProtobufDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
   datasource:
     url: jdbc:mysql://localhost:3306/mydatabase?useSSL=false
     username: user
@@ -17,3 +22,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  restart:
+    exclude:
+      company-classes=/com/andrei/labbinary/avro/:
