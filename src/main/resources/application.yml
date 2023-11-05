@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.andrei.labbinary.config.ProtobufSerializer
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: my-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.andrei.labbinary.config.ProtobufDeserializer
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase?useSSL=false
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

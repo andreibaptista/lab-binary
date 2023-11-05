@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "Person",
+  "namespace": "com.andrei.labbinary.avro",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}

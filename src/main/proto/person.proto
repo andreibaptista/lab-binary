@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_outer_classname = "PersonProto";
+package com.andrei.labbinary.proto;
+
+message Person {
+  string name = 1;
+}
